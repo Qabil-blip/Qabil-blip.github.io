@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qabilin Saytı</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+
+    /* ARXA FON ŞƏKİL */
+    background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center/cover;
+}
+
+/* ÜSTÜNƏ QARALTMA EFFEKTİ */
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+h1 {
+    color: white;
+    font-size: 40px;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.button {
+    display: block;
+    width: 250px;
+    margin: 15px auto;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.youtube {
+    background-color: #ff0000;
+    color: white;
+}
+
+.discord {
+    background-color: #5865F2;
+    color: white;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    opacity: 0.85;
+}
+
+.footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    z-index: 2;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1 id="welcomeText">Yüklənir...</h1>
+
+    <button class="button youtube" onclick="goYoutube()">
+        YouTube Kanalına Get
+    </button>
+
+    <button class="button discord" onclick="goDiscord()">
+        Discord Serverə Get
+    </button>
+</div>
+
+<div class="footer">
+    © 2026 Qabilin Dünyası
+</div>
+
+<script>
+let text = "Qabilin internet saytına xoş gəlmisiniz";
+let index = 0;
+
+function typeEffect() {
+    if (index < text.length) {
+        document.getElementById("welcomeText").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, 50);
+    }
+}
+
+window.onload = function() {
+    document.getElementById("welcomeText").innerHTML = "";
+    typeEffect();
+};
+
+function goYoutube() {
+    window.open("https://www.youtube.com/@QabilinDünyası", "_blank");
+}
+
+function goDiscord() {
+    window.open("https://discord.gg/hgRpf8uS", "_blank");
+}
+</script>
+
+</body>
+</html>
+<h1>Salam dostlar,Qabilin internet sitemə xoş gəldiniz👋</h1>
+<p>Bəzi şeylər yakında gələcəkdir!</p>
